@@ -32,6 +32,7 @@ module SimpleLLM
 
     class Sync
       require "json"
+      require "digest"
       include Common
       def call project, api_key, input, model = "yandexgpt/rc", max_output_tokens = 500, temperature = 0, instructions: nil, max_input_chars: 1000
         raise Error if input.size > max_input_chars
